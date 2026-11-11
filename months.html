@@ -1,128 +1,130 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="2026 Planner: twelve month openers." />
-<title>Months · 2026 Planner</title>
-<link rel="icon" type="image/jpeg" href="assets/favicon.jpg" />
-<link rel="apple-touch-icon" href="assets/app-icon.jpg" />
-<link rel="stylesheet" href="style.css" />
-</head>
-<body class="ppt-body mon-body">
-
-<img id="petSource" src="assets/pet.png" alt="" hidden />
-
-<main class="ppt-stage" id="stage">
-
-  <!-- ===== 顶部导航 ===== -->
-  <nav class="topnav" aria-label="Page navigation">
-    <span class="topnav__brand">2026 Planner</span>
-    <div class="topnav__links">
-      <a class="topnav__link" href="index.html">Home</a>
-      <a class="topnav__link is-active" href="months.html">Months</a>
-      <a class="topnav__link" href="calendar.html">Calendar</a>
-      <a class="topnav__link" href="about.html">About</a>
-      <button class="topnav__link topnav__link--btn" id="openSettings" type="button">Settings</button>
-    </div>
-  </nav>
-
-  <!-- ===== 牛皮纸双开活页本 ===== -->
-  <div class="binder">
-    <div class="binder__spine" aria-hidden="true">
-      <span class="binder__ring"></span>
-      <span class="binder__ring"></span>
-      <span class="binder__ring"></span>
-      <span class="binder__ring"></span>
-      <span class="binder__ring"></span>
-      <span class="binder__ring"></span>
-      <span class="binder__ring"></span>
-    </div>
-
-    <!-- 左页：1–6 月 -->
-    <section class="binder__page binder__page--left">
-      <div class="binder__inner bm-inner">
-        <h1 class="bm-title">2026</h1>
-        <p class="bm-sub">pick a month</p>
-        <div class="bm-grid" aria-label="January to June">
-          <a class="month-card" href="calendar.html?month=1" data-month="1">
-            <span class="month-card__name">January</span>
-            <span class="month-card__meta">Month 01</span>
-            <span class="month-card__count" data-count>0 entries</span>
-          </a>
-          <a class="month-card" href="calendar.html?month=2" data-month="2">
-            <span class="month-card__name">February</span>
-            <span class="month-card__meta">Month 02</span>
-            <span class="month-card__count" data-count>0 entries</span>
-          </a>
-          <a class="month-card" href="calendar.html?month=3" data-month="3">
-            <span class="month-card__name">March</span>
-            <span class="month-card__meta">Month 03</span>
-            <span class="month-card__count" data-count>0 entries</span>
-          </a>
-          <a class="month-card" href="calendar.html?month=4" data-month="4">
-            <span class="month-card__name">April</span>
-            <span class="month-card__meta">Month 04</span>
-            <span class="month-card__count" data-count>0 entries</span>
-          </a>
-          <a class="month-card" href="calendar.html?month=5" data-month="5">
-            <span class="month-card__name">May</span>
-            <span class="month-card__meta">Month 05</span>
-            <span class="month-card__count" data-count>0 entries</span>
-          </a>
-          <a class="month-card" href="calendar.html?month=6" data-month="6">
-            <span class="month-card__name">June</span>
-            <span class="month-card__meta">Month 06</span>
-            <span class="month-card__count" data-count>0 entries</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- 右页：7–12 月 -->
-    <section class="binder__page binder__page--right">
-      <div class="binder__inner bm-inner">
-        <p class="bm-sub bm-sub--right">July — December</p>
-        <div class="bm-grid bm-grid--right" aria-label="July to December">
-          <a class="month-card" href="calendar.html?month=7" data-month="7">
-            <span class="month-card__name">July</span>
-            <span class="month-card__meta">Month 07</span>
-            <span class="month-card__count" data-count>0 entries</span>
-          </a>
-          <a class="month-card" href="calendar.html?month=8" data-month="8">
-            <span class="month-card__name">August</span>
-            <span class="month-card__meta">Month 08</span>
-            <span class="month-card__count" data-count>0 entries</span>
-          </a>
-          <a class="month-card" href="calendar.html?month=9" data-month="9">
-            <span class="month-card__name">September</span>
-            <span class="month-card__meta">Month 09</span>
-            <span class="month-card__count" data-count>0 entries</span>
-          </a>
-          <a class="month-card" href="calendar.html?month=10" data-month="10">
-            <span class="month-card__name">October</span>
-            <span class="month-card__meta">Month 10</span>
-            <span class="month-card__count" data-count>0 entries</span>
-          </a>
-          <a class="month-card" href="calendar.html?month=11" data-month="11">
-            <span class="month-card__name">November</span>
-            <span class="month-card__meta">Month 11</span>
-            <span class="month-card__count" data-count>0 entries</span>
-          </a>
-          <a class="month-card" href="calendar.html?month=12" data-month="12">
-            <span class="month-card__name">December</span>
-            <span class="month-card__meta">Month 12</span>
-            <span class="month-card__count" data-count>0 entries</span>
-          </a>
-        </div>
-      </div>
-    </section>
-  </div>
-
-</main>
-
-<button class="fs-btn" id="fullscreenBtn" type="button" aria-label="Fullscreen">⤢</button>
-
-<script src="site.js"></script>
-</body>
-</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="2026 Planner: twelve month openers." />
+<title>Months · 2026 Planner</title>
+<link rel="icon" type="image/png" sizes="192x192" href="assets/icon-192.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="assets/icon-180.png" />
+<link rel="manifest" href="manifest.json" />
+<meta name="theme-color" content="#1c3427" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body class="ppt-body mon-body">
+
+<img id="petSource" src="assets/pet.png" alt="" hidden />
+
+<main class="ppt-stage" id="stage">
+
+  <!-- ===== 顶部导航 ===== -->
+  <nav class="topnav" aria-label="Page navigation">
+    <span class="topnav__brand">2026 Planner</span>
+    <div class="topnav__links">
+      <a class="topnav__link" href="index.html">Home</a>
+      <a class="topnav__link is-active" href="months.html">Months</a>
+      <a class="topnav__link" href="calendar.html">Calendar</a>
+      <a class="topnav__link" href="about.html">About</a>
+      <button class="topnav__link topnav__link--btn" id="openSettings" type="button">Settings</button>
+    </div>
+  </nav>
+
+  <!-- ===== 牛皮纸双开活页本 ===== -->
+  <div class="binder">
+    <div class="binder__spine" aria-hidden="true">
+      <span class="binder__ring"></span>
+      <span class="binder__ring"></span>
+      <span class="binder__ring"></span>
+      <span class="binder__ring"></span>
+      <span class="binder__ring"></span>
+      <span class="binder__ring"></span>
+      <span class="binder__ring"></span>
+    </div>
+
+    <!-- 左页：1–6 月 -->
+    <section class="binder__page binder__page--left">
+      <div class="binder__inner bm-inner">
+        <h1 class="bm-title">2026</h1>
+        <p class="bm-sub">pick a month</p>
+        <div class="bm-grid" aria-label="January to June">
+          <a class="month-card" href="calendar.html?month=1" data-month="1">
+            <span class="month-card__name">January</span>
+            <span class="month-card__meta">Month 01</span>
+            <span class="month-card__count" data-count>0 entries</span>
+          </a>
+          <a class="month-card" href="calendar.html?month=2" data-month="2">
+            <span class="month-card__name">February</span>
+            <span class="month-card__meta">Month 02</span>
+            <span class="month-card__count" data-count>0 entries</span>
+          </a>
+          <a class="month-card" href="calendar.html?month=3" data-month="3">
+            <span class="month-card__name">March</span>
+            <span class="month-card__meta">Month 03</span>
+            <span class="month-card__count" data-count>0 entries</span>
+          </a>
+          <a class="month-card" href="calendar.html?month=4" data-month="4">
+            <span class="month-card__name">April</span>
+            <span class="month-card__meta">Month 04</span>
+            <span class="month-card__count" data-count>0 entries</span>
+          </a>
+          <a class="month-card" href="calendar.html?month=5" data-month="5">
+            <span class="month-card__name">May</span>
+            <span class="month-card__meta">Month 05</span>
+            <span class="month-card__count" data-count>0 entries</span>
+          </a>
+          <a class="month-card" href="calendar.html?month=6" data-month="6">
+            <span class="month-card__name">June</span>
+            <span class="month-card__meta">Month 06</span>
+            <span class="month-card__count" data-count>0 entries</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 右页：7–12 月 -->
+    <section class="binder__page binder__page--right">
+      <div class="binder__inner bm-inner">
+        <p class="bm-sub bm-sub--right">July — December</p>
+        <div class="bm-grid bm-grid--right" aria-label="July to December">
+          <a class="month-card" href="calendar.html?month=7" data-month="7">
+            <span class="month-card__name">July</span>
+            <span class="month-card__meta">Month 07</span>
+            <span class="month-card__count" data-count>0 entries</span>
+          </a>
+          <a class="month-card" href="calendar.html?month=8" data-month="8">
+            <span class="month-card__name">August</span>
+            <span class="month-card__meta">Month 08</span>
+            <span class="month-card__count" data-count>0 entries</span>
+          </a>
+          <a class="month-card" href="calendar.html?month=9" data-month="9">
+            <span class="month-card__name">September</span>
+            <span class="month-card__meta">Month 09</span>
+            <span class="month-card__count" data-count>0 entries</span>
+          </a>
+          <a class="month-card" href="calendar.html?month=10" data-month="10">
+            <span class="month-card__name">October</span>
+            <span class="month-card__meta">Month 10</span>
+            <span class="month-card__count" data-count>0 entries</span>
+          </a>
+          <a class="month-card" href="calendar.html?month=11" data-month="11">
+            <span class="month-card__name">November</span>
+            <span class="month-card__meta">Month 11</span>
+            <span class="month-card__count" data-count>0 entries</span>
+          </a>
+          <a class="month-card" href="calendar.html?month=12" data-month="12">
+            <span class="month-card__name">December</span>
+            <span class="month-card__meta">Month 12</span>
+            <span class="month-card__count" data-count>0 entries</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+</main>
+
+<button class="fs-btn" id="fullscreenBtn" type="button" aria-label="Fullscreen">⤢</button>
+
+<script src="site.js"></script>
+</body>
+</html>
