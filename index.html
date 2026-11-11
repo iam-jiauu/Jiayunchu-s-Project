@@ -1,76 +1,74 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="2026 Planner: open the kraft notebook and start writing." />
-<title>2026 Planner · Cover</title>
-<link rel="icon" type="image/png" sizes="192x192" href="assets/icon-192.png" />
-<link rel="apple-touch-icon" sizes="180x180" href="assets/icon-180.png" />
-<link rel="manifest" href="manifest.json" />
-<meta name="theme-color" content="#1c3427" />
-<link rel="stylesheet" href="style.css" />
-</head>
-<body class="ppt-body cover-body">
-
-<header class="site-header"></header>
-
-<main class="ppt-stage" id="stage">
-  <!-- ===== closed kraft notebook cover ===== -->
-  <div class="cover-book">
-    <img class="cover-book__img" src="assets/ppt/cover_notebook.png" alt="2026 planner notebook cover" />
-    <a class="cover-clasp" href="months.html" aria-label="Press the clasp on the right to open the 2026 planner"></a>
-  </div>
-</main>
-
-<div class="cover-turn" id="coverTurn" aria-hidden="true">
-  <div class="cover-turn__sheet"></div>
-  <div class="cover-turn__shade"></div>
-</div>
-
-<!-- ===== v8 开场：起名 -> 欢迎 -> 钥匙 ===== -->
-<div class="intro" id="coverIntro" hidden>
-  <button class="intro__skip" id="introSkip" type="button" hidden>Skip</button>
-
-  <div class="intro__step intro__step--name" id="introName">
-    <p class="intro__hint">What should I call you?</p>
-    <input class="intro__input" id="introNameInput" type="text" maxlength="20"
-           autocomplete="off" spellcheck="false" placeholder="Your name" />
-    <button class="intro__btn" id="introNameGo" type="button">Confirm</button>
-  </div>
-
-  <div class="intro__step intro__step--text" id="introText" hidden>
-    <p class="intro__type"><span id="introChars"></span><span class="intro__caret" id="introCaret"></span></p>
-  </div>
-</div>
-
-<button class="cover-key" id="coverKey" type="button" aria-label="Unlock the journal">
-  <span class="cover-key__glow" aria-hidden="true"></span>
-  <svg class="cover-key__svg" viewBox="0 0 64 120" aria-hidden="true">
-    <defs>
-      <linearGradient id="keyGold" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0" stop-color="#fff6d2" />
-        <stop offset=".45" stop-color="#e8bb55" />
-        <stop offset="1" stop-color="#9a6a20" />
-      </linearGradient>
-    </defs>
-    <g fill="none" stroke="rgba(70,44,10,.45)" stroke-width="13"
-       stroke-linecap="round" stroke-linejoin="round" transform="translate(1.6,2.2)">
-      <circle cx="32" cy="26" r="16" />
-      <path d="M32 42 V104" />
-      <path d="M32 86 H50 V98 M32 74 H45" />
-    </g>
-    <g fill="none" stroke="url(#keyGold)" stroke-width="10"
-       stroke-linecap="round" stroke-linejoin="round">
-      <circle cx="32" cy="26" r="16" />
-      <path d="M32 42 V104" />
-      <path d="M32 86 H50 V98 M32 74 H45" />
-    </g>
-  </svg>
-</button>
-
-<button class="fs-btn"  id="fullscreenBtn" type="button" aria-label="Fullscreen">⤢</button>
-
-<script src="site.js"></script>
-</body>
-</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="2026 Planner: open the kraft notebook and start writing." />
+<title>2026 Planner · Cover</title>
+<link rel="icon" type="image/jpeg" href="assets/favicon.jpg" />
+<link rel="apple-touch-icon" href="assets/app-icon.jpg" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body class="ppt-body cover-body">
+
+<header class="site-header"></header>
+
+<main class="ppt-stage" id="stage">
+  <!-- ===== closed kraft notebook cover ===== -->
+  <div class="cover-book">
+    <img class="cover-book__img" src="assets/ppt/cover_notebook.png" alt="2026 planner notebook cover" />
+    <a class="cover-clasp" href="months.html" aria-label="Press the clasp on the right to open the 2026 planner"></a>
+  </div>
+</main>
+
+<div class="cover-turn" id="coverTurn" aria-hidden="true">
+  <div class="cover-turn__sheet"></div>
+  <div class="cover-turn__shade"></div>
+</div>
+
+<!-- ===== v8 开场：起名 -> 欢迎 -> 钥匙 ===== -->
+<div class="intro" id="coverIntro" hidden>
+  <button class="intro__skip" id="introSkip" type="button" hidden>Skip</button>
+
+  <div class="intro__step intro__step--name" id="introName">
+    <p class="intro__hint">What should I call you?</p>
+    <input class="intro__input" id="introNameInput" type="text" maxlength="20"
+           autocomplete="off" spellcheck="false" placeholder="Your name" />
+    <button class="intro__btn" id="introNameGo" type="button">Confirm</button>
+  </div>
+
+  <div class="intro__step intro__step--text" id="introText" hidden>
+    <p class="intro__type"><span id="introChars"></span><span class="intro__caret" id="introCaret"></span></p>
+  </div>
+</div>
+
+<button class="cover-key" id="coverKey" type="button" aria-label="Unlock the journal">
+  <span class="cover-key__glow" aria-hidden="true"></span>
+  <svg class="cover-key__svg" viewBox="0 0 64 120" aria-hidden="true">
+    <defs>
+      <linearGradient id="keyGold" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#fff6d2" />
+        <stop offset=".45" stop-color="#e8bb55" />
+        <stop offset="1" stop-color="#9a6a20" />
+      </linearGradient>
+    </defs>
+    <g fill="none" stroke="rgba(70,44,10,.45)" stroke-width="13"
+       stroke-linecap="round" stroke-linejoin="round" transform="translate(1.6,2.2)">
+      <circle cx="32" cy="26" r="16" />
+      <path d="M32 42 V104" />
+      <path d="M32 86 H50 V98 M32 74 H45" />
+    </g>
+    <g fill="none" stroke="url(#keyGold)" stroke-width="10"
+       stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="32" cy="26" r="16" />
+      <path d="M32 42 V104" />
+      <path d="M32 86 H50 V98 M32 74 H45" />
+    </g>
+  </svg>
+</button>
+
+<button class="fs-btn"  id="fullscreenBtn" type="button" aria-label="Fullscreen">⤢</button>
+
+<script src="site.js"></script>
+</body>
+</html>
