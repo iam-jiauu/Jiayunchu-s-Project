@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Calendar · 2026 Planner</title>
+<link rel="icon" type="image/jpeg" href="assets/favicon.jpg" />
+<link rel="apple-touch-icon" href="assets/app-icon.jpg" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body class="ppt-body cal-body">
+
+<img id="petSource" src="assets/pet.png" alt="" hidden />
+
+<main class="ppt-stage" id="stage">
+
+  <!-- ===== 顶部导航 ===== -->
+  <nav class="topnav" aria-label="Page navigation">
+    <span class="topnav__brand">2026 Planner</span>
+    <div class="topnav__links">
+      <a class="topnav__link" href="index.html">Home</a>
+      <a class="topnav__link" href="months.html">Months</a>
+      <a class="topnav__link is-active" href="calendar.html">Calendar</a>
+      <a class="topnav__link" href="about.html">About</a>
+      <button class="topnav__link topnav__link--btn" id="openSettings" type="button">Settings</button>
+    </div>
+  </nav>
+
+  <!-- ===== 牛皮纸双开活页本 ===== -->
+  <div class="binder">
+    <div class="binder__spine" aria-hidden="true">
+      <span class="binder__ring"></span>
+      <span class="binder__ring"></span>
+      <span class="binder__ring"></span>
+      <span class="binder__ring"></span>
+      <span class="binder__ring"></span>
+      <span class="binder__ring"></span>
+      <span class="binder__ring"></span>
+    </div>
+
+    <!-- 左页：月份标题 + 1–15 号 -->
+    <section class="binder__page binder__page--left">
+      <div class="binder__inner bc-inner">
+        <div class="bc-head">
+          <h1 class="bc-month" id="monthTitle">January</h1>
+          <div class="bc-arrows">
+            <button class="bc-arrow" id="prevMonth" type="button" aria-label="Previous month">‹</button>
+            <button class="bc-arrow" id="nextMonth" type="button" aria-label="Next month">›</button>
+          </div>
+        </div>
+        <div class="bc-grid" id="calGridLeft" role="grid" aria-label="First half of the month"></div>
+      </div>
+    </section>
+
+    <!-- 右页：本月重点 + 16–31 号 -->
+    <section class="binder__page binder__page--right">
+      <div class="binder__inner bc-inner">
+        <section class="bc-prio" aria-label="Monthly priorities">
+          <p class="bc-prio__title">Monthly Priorities</p>
+          <ul class="bc-prio__list" id="prioList"></ul>
+          <form class="bc-prio__form" id="prioForm" autocomplete="off">
+            <input class="bc-prio__input" id="prioInput" type="text" placeholder="Add a priority…" aria-label="Add a priority" />
+            <button class="bc-prio__add" type="submit" aria-label="Add">+</button>
+          </form>
+        </section>
+        <div class="bc-grid" id="calGridRight" role="grid" aria-label="Second half of the month"></div>
+      </div>
+    </section>
+  </div>
+
+</main>
+
+<button class="fs-btn" id="fullscreenBtn" type="button" aria-label="Fullscreen">⤢</button>
+
+<!-- ===== 当天记录：大页面 ===== -->
+<div class="day-page" id="dayPage" role="dialog" aria-modal="true" aria-labelledby="dayPageDate">
+  <div class="day-page__sheet" id="daySheet">
+    <div class="day-page__top">
+      <button class="day-page__back" id="dayBack" type="button">&#8249; Back</button>
+      <h2 class="day-page__date" id="dayPageDate">&mdash;</h2>
+      <p class="day-page__hint">everything you stick to this one day</p>
+    </div>
+
+    <div class="day-page__body">
+      <div class="day-page__left">
+        <p class="day-page__label">Notes</p>
+        <ul class="entry-list" id="dayEntryList"></ul>
+
+        <div class="day-page__composer">
+          <form class="composer__row" id="dayForm" autocomplete="off">
+            <textarea class="composer__input" id="dayInput" rows="1" placeholder="Click this paper and start writing — no limit." aria-label="Write on this day's page" required></textarea>
+            <button class="composer__add" type="submit">Add</button>
+          </form>
+          <div class="composer__tools">
+            <div class="tool-group">
+              <span class="tool-group__label">Font</span>
+              <span id="fontChips"></span>
+            </div>
+            <div class="tool-group">
+              <span class="tool-group__label">Ink</span>
+              <span id="colorDots"></span>
+            </div>
+            <label class="photo-pick">Attach photo
+              <input id="dayPhoto" type="file" accept="image/*" />
+            </label>
+          </div>
+          <div class="emote-bar" id="emoteBar"></div>
+          <p class="day-page__note">Everything is saved in this browser on this device.</p>
+        </div>
+      </div>
+
+      <div class="day-page__right">
+        <p class="day-page__label">Scrapbook</p>
+
+        <div class="deco-bar">
+          <div class="deco-tabs" id="decoTabs">
+            <button type="button" class="deco-tab is-active" data-cat="tape">Tape</button>
+            <button type="button" class="deco-tab" data-cat="paper">Paper</button>
+            <button type="button" class="deco-tab" data-cat="sticker">Sticker</button>
+            <button type="button" class="deco-tab" data-cat="text">Text</button>
+          </div>
+          <div class="deco-tray" id="decoTray"></div>
+          <div class="text-maker" id="textMaker" hidden>
+            <textarea class="text-maker__input" id="textMakerInput" rows="2" placeholder="Type your words here — they land on the page as a sticker."></textarea>
+            <div class="text-maker__row">
+              <div class="tool-group">
+                <span class="tool-group__label">Font</span>
+                <span id="textFontChips"></span>
+              </div>
+              <div class="tool-group">
+                <span class="tool-group__label">Ink</span>
+                <span id="textColorDots"></span>
+              </div>
+              <button type="button" class="text-maker__add" id="textMakerAdd">Place on page</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="photo-wall" id="photoWall">
+          <div class="photo-wall__empty" id="photoWallEmpty">Pick a tape, a paper or a sticker above, then drag it anywhere.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="site.js"></script>
+</body>
+</html>
